@@ -6,6 +6,7 @@ import { LanguageService } from '../../master/languages/language.service';
 import { CommonService } from   '../../shared/helpers/common.service';
 import { Router, ActivatedRoute }                from '@angular/router';
 import { Location } from '@angular/common';
+import * as _ from 'underscore';
 
 @Component({
     templateUrl: 'users.component.html'
@@ -206,22 +207,22 @@ export class UsersComponent implements OnInit {
 
     private close() {
 
-       // if (_.contains(['true'], this.modal)) {
-       //     this.OutputButtonCloseClick.next(null);
-       // } else {
-       //     this._location.back();
-       // }
-        if (this.modal.indexOf("true")) {
+        if (_.contains(['true'], this.modal)) {
             this.OutputButtonCloseClick.next(null);
         } else {
             this._location.back();
         }
+       // if (this.modal.indexOf("true")) {
+       //     this.OutputButtonCloseClick.next(null);
+       // } else {
+       //     this._location.back();
+       // }
     }
 
     private onPageChanged(page) {
 
-     //   var startIndex = (page - 1) * this.pageSize;
-     //   this.pagedUsers = _.take(_.rest(this.users, startIndex), this.pageSize);
+        var startIndex = (page - 1) * this.pageSize;
+        this.pagedUsers = _.take(_.rest(this.users, startIndex), this.pageSize);
     }
 
 
@@ -237,7 +238,7 @@ export class UsersComponent implements OnInit {
         console.log(data);
         if (process === 'getUsersAll') {
             this.users = data;
-      //      this.pagedUsers = _.take(this.users, this.pageSize);
+            this.pagedUsers = _.take(this.users, this.pageSize);
         }
         if (process === 'loadProfiles') {
             this.profiles = data;

@@ -3,7 +3,7 @@
 import {Injectable} from "@angular/core";
 import {URLSearchParams} from '@angular/http';
 import { LocalData } from './common';
-
+import * as _ from 'underscore';
 
 @Injectable()
 
@@ -63,21 +63,21 @@ export class CommonService {
 
         var runMode = 'display';
 
-        if ((componentMode == 'workwith') || (componentMode == 'display') || (componentMode == 'select')) {
+       // if ((componentMode == 'workwith') || (componentMode == 'display') || (componentMode == 'select')) {
+       //     runMode = componentMode;
+       //} else {
+       //     runMode = componentMode;
+       //     runMode = 'display';
+       // }
+
+        if (_.contains(['workwith', 'display', 'select'], componentMode)) {
             runMode = componentMode;
         } else {
-            runMode = componentMode;
-            runMode = 'display';
+            runMode = urlMode;
+            if (!_.contains(['workwith', 'display', 'select'], runMode)) {
+                runMode = 'display';
+            }
         }
-
-        //  if (_.contains(['workwith', 'display', 'select'], componentMode)) {
-        //      runMode = componentMode;
-        //  } else {
-        //      runMode = urlMode;
-        //      if (!_.contains(['workwith', 'display', 'select'], runMode)) {
-        //          runMode = 'display';
-        //      }
-        //  }
 
         return runMode;
     }
@@ -85,21 +85,21 @@ export class CommonService {
     setModal(componentModal: string, urlModal: string) {
 
         var runModal = 'false';
-        if ((componentModal == 'true') || (componentModal == 'false')) {
-            runModal = componentModal;
-        } else {
-            runModal = urlModal;
-            runModal = 'false';
-        }
+      //  if ((componentModal == 'true') || (componentModal == 'false')) {
+      //      runModal = componentModal;
+      //  } else {
+      //      runModal = urlModal;
+      //      runModal = 'false';
+      //  }
 
-    //    if (_.contains(['true', 'false'], componentModal)) {
-    //        runModal = componentModal;
-    //    } else {
-    //        runModal = urlModal;
-    //        if (!_.contains(['true', 'false'], runModal)) {
-    //            runModal = 'false';
-    //        }
-    //    }
+      if (_.contains(['true', 'false'], componentModal)) {
+          runModal = componentModal;
+      } else {
+          runModal = urlModal;
+          if (!_.contains(['true', 'false'], runModal)) {
+              runModal = 'false';
+          }
+      }
         return runModal;
 
     }

@@ -33,10 +33,12 @@
     "ng2-toastr": "^1.1.2",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
+    "underscore": "^1.8.3",
     "zone.js": "0.6.25"
   },
   "devDependencies": {
     "@types/jasmine": "^2.5.35",
+    "@types/underscore": "^1.7.33",
     "angular-cli": "1.0.0-beta.17",
     "codelyzer": "1.0.0-beta.0",
     "jasmine-core": "^2.5.2",

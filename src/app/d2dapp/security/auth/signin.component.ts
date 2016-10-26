@@ -76,7 +76,7 @@ export class SigninComponent implements OnInit {
     handleSuccess() {
         console.log("handle success");
         this.signingIn = false;
-        this._router.navigate(['/pages/users']);
+        this._router.navigate(['/components/users', { mode: 'workwith', modal: 'false' }]);
     }
 
 }
