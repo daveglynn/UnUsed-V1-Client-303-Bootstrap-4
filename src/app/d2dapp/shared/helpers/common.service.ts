@@ -20,22 +20,21 @@ export class CommonService {
         let params: URLSearchParams = new URLSearchParams();
         params.set('Auth', localStorage.getItem('token'));
 
-        // was unable to install underscore
-        //  _.each(urlParms, function (element, index, list) {
-        //      params.append(String(index), String(element));
-        //  });
+          _.each(urlParms, function (element, index, list) {
+              params.append(String(index), String(element));
+          });
 
-         for (var key in urlParms) {
-             if (urlParms.hasOwnProperty(key)) {
-                 var obj = urlParms[key];
-                 for (var prop in obj) {
-                     if (obj.hasOwnProperty(prop)) {
-                         console.log(key + " = " + obj[prop]);
-                          params.append(prop, obj[prop]);
-                     }
-                  }
-             }
-          }
+         //for (var key in urlParms) {
+         //    if (urlParms.hasOwnProperty(key)) {
+         //        var obj = urlParms[key];
+         //        for (var prop in obj) {
+         //            if (obj.hasOwnProperty(prop)) {
+         //                console.log(key + " = " + obj[prop]);
+         //                 params.append(prop, obj[prop]);
+         //            }
+         //         }
+         //    }
+         // }
 
 
         return params;

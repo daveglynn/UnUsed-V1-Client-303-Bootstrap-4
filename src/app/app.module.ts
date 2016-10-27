@@ -62,7 +62,7 @@ import { D2DAppModule }      from './d2dapp/d2dapp.module';
         Ng2BootstrapModule,
         ChartsModule,
         ToastModule,
-        D2DAppModule        //dgstart
+        D2DAppModule     //dgstart
     ],
     declarations: [
         AppComponent,

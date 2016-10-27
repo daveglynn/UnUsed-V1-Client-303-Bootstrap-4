@@ -47,7 +47,6 @@ export class SigninComponent implements OnInit {
     }
 
     onSubmit() {
-        debugger;
         this.signingIn = true;
         const login = new Login(this.form.value.email, this.form.value.password);
         this._authService.signin(login)
@@ -76,7 +75,8 @@ export class SigninComponent implements OnInit {
     handleSuccess() {
         console.log("handle success");
         this.signingIn = false;
-        this._router.navigate(['/components/users', { mode: 'workwith', modal: 'false' }]);
+        
+        this._router.navigate(['/components/users'], { queryParams: { mode: 'workwith', modal: 'false' } });
     }
 
 }

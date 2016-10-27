@@ -41,6 +41,8 @@ import { RegisterComponent }            from './pages/register.component';
 import { UsersComponent }      from './d2dapp/security/users/users.component';
 import { SignupComponent }     from './d2dapp/security/auth/signup.component';
 import { SigninComponent }     from './d2dapp/security/auth/signin.component';
+import { UserFormComponent }      from './d2dapp/security/users/user-form.component';
+import { PreventUnsavedChangesGuard } from './d2dapp/prevent-unsaved-changes-guard.service';
 //dgend
 
 const appRoutes: Routes = [
@@ -74,61 +76,40 @@ const appRoutes: Routes = [
                     title: 'Components'
                 },
                 children: [
-                    {
-                        path: 'buttons',
-                        component: ButtonsComponent,
-                        data: {
-                            title: 'Buttons'
-                        }
-                    },
-                    {
-                        path: 'cards',
-                        component: CardsComponent,
-                        data: {
-                            title: 'Cards'
-                        }
-                    },
-                    {
-                        path: 'forms',
-                        component: FormsComponent,
-                        data: {
-                            title: 'Forms'
-                        }
-                    },
-                    {
-                        path: 'social-buttons',
-                        component: SocialButtonsComponent,
-                        data: {
-                            title: 'Social buttons'
-                        }
-                    },
-                    {
-                        path: 'switches',
-                        component: SwitchesComponent,
-                        data: {
-                            title: 'Switches'
-                        }
-                    },
-                    {
-                        path: 'tables',
-                        component: TablesComponent,
-                        data: {
-                            title: 'Tables'
-                        }
-                    },
+                    
                     {
                         path: 'users',
                         component: UsersComponent,
                         data: {
                             title: 'Users'
                         }
-                    }
-                ]
-            },
-            {
-                path: 'icons',
-                redirectTo: 'icons/font-awesome',
-                pathMatch: 'full',
+                    },
+                    {
+                        path: 'users/add',
+                        component: UserFormComponent,
+                        canDeactivate: [PreventUnsavedChangesGuard]  
+                    },
+                    {
+                        path: 'users/edit/:id',
+                        component: UserFormComponent,
+                        canDeactivate: [PreventUnsavedChangesGuard]
+                    },
+                    {
+                        path: 'users/view/:id',
+                        component: UserFormComponent,
+                        canDeactivate: [PreventUnsavedChangesGuard]
+                    },
+                    {
+                        path: 'users/edit/:id',
+                        component: UserFormComponent,
+                        canDeactivate: [PreventUnsavedChangesGuard]
+                    },
+                    {
+                        path: 'users/delete/:id',
+                        component: UserFormComponent,
+                        canDeactivate: [PreventUnsavedChangesGuard]
+                    },                                                                               
+                ],
             },
             {
                 path: 'plugins',
@@ -141,49 +122,6 @@ const appRoutes: Routes = [
                         component: NotificationsComponent,
                         data: {
                             title: 'Notifications'
-                        }
-                    }
-                ]
-            },
-            {
-                path: 'icons',
-                data: {
-                    title: 'Icons'
-                },
-                children: [
-                    {
-                        path: 'font-awesome',
-                        component: FontAwesomeComponent,
-                        data: {
-                            title: 'Font Awesome'
-                        }
-                    },
-                    {
-                        path: 'glyphicons',
-                        component: GlyphiconsComponent,
-                        data: {
-                            title: 'Glyphicons'
-                        }
-                    },
-                    {
-                        path: 'glyphicons-filetypes',
-                        component: GlyphiconsFiletypesComponent,
-                        data: {
-                            title: 'Glyphicons Filetypes'
-                        }
-                    },
-                    {
-                        path: 'glyphicons-social',
-                        component: GlyphiconsSocialComponent,
-                        data: {
-                            title: 'Glyphicons Social'
-                        }
-                    },
-                    {
-                        path: 'simple-line-icons',
-                        component: SimpleLineIconsComponent,
-                        data: {
-                            title: 'Simple Line Icons'
                         }
                     }
                 ]
@@ -211,34 +149,6 @@ const appRoutes: Routes = [
             title: 'Pages'
         },
         children: [
-            {
-                path: '404',
-                component: p404Component,
-                data: {
-                    title: 'Page 404'
-                }
-            },
-            {
-                path: '500',
-                component: p500Component,
-                data: {
-                    title: 'Page 500'
-                }
-            },
-            {
-                path: 'login',
-                component: LoginComponent,
-                data: {
-                    title: 'Login Page'
-                }
-            },
-            {
-                path: 'register',
-                component: RegisterComponent,
-                data: {
-                    title: 'Register Page'
-                }
-            },
             {
                 path: 'signup',
                 component: SignupComponent,

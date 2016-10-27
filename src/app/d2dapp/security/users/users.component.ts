@@ -54,7 +54,6 @@ export class UsersComponent implements OnInit {
         this.loadProfiles();
         this.loadLanguages();
         this.loadUsers();
- 
     } 
 
     private setupForm() {
@@ -105,7 +104,7 @@ export class UsersComponent implements OnInit {
             {
                 action: 'view',
                 display: 'View',
-                router: '/users/view'
+                router: 'view'
             }
         );
 
@@ -114,12 +113,12 @@ export class UsersComponent implements OnInit {
             this.buttons.push({
                 action: 'edit',
                 display: 'Edit',
-                router: '/users/edit'
+                router: 'edit'
             });
             this.buttons.push({
                 action: 'delete',
                 display: 'Delete',
-                router: '/users/delete'
+                router: 'delete'
             }
             );
         }
@@ -233,7 +232,7 @@ export class UsersComponent implements OnInit {
     }
 
     private handleData(process, data: any) {
-        debugger;
+
         console.log("handle data");
         console.log(data);
         if (process === 'getUsersAll') {

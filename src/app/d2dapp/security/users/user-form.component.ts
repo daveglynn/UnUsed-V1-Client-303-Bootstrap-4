@@ -78,11 +78,12 @@ export class UserFormComponent implements OnInit {
     ) {
         this.action = this._commonService.getAction(this._route.snapshot.routeConfig.path);
         this.setupValidators(fb)
+        this.setupForm();
     }
  
     ngOnInit() {
 
-        this.setupForm();
+        
     }
 
     private setupForm() {
@@ -166,7 +167,7 @@ export class UserFormComponent implements OnInit {
     }
 
     private modalProcessing() {
-
+        debugger;
         this._route.params.subscribe(params => {
             this.mode = this._commonService.setMode(this.InputMode, params['mode'])
             this.modal = this._commonService.setModal(this.InputModal, params['modal'])
@@ -275,7 +276,6 @@ export class UserFormComponent implements OnInit {
         console.log(data);
 
         if (process === 'getUserById') {
-            debugger;
             this.user = data;
             this.user.enabledFrom = this._commonService.getLocalDate(this.user.enabledFrom);
             this.user.enabledTo = this._commonService.getLocalDate(this.user.enabledTo);
