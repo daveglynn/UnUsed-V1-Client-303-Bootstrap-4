@@ -19,7 +19,7 @@ import { ErrorService } from "../.././shared/errors/error.service";
 export class UserFormComponent implements OnInit {
 
     // interface to other components
-    @Input() InputMode: string;
+    //@Input() InputMode: string;
     @Input() InputModal: string;
 
     // control template modal
@@ -31,7 +31,7 @@ export class UserFormComponent implements OnInit {
     dropdownProfileName = '';
 
     // this control
-    mode: string;
+    //mode: string;
     modal: string;
     form: FormGroup;
     title: string;
@@ -76,7 +76,7 @@ export class UserFormComponent implements OnInit {
         private _location: Location,
         private _commonService: CommonService
     ) {
-        this.action = this._commonService.getAction(this._route.snapshot.routeConfig.path);
+         this.action = this._commonService.getAction(this._route.snapshot.routeConfig.path);
         this.setupValidators(fb)
         this.setupForm();
     }
@@ -169,12 +169,12 @@ export class UserFormComponent implements OnInit {
     private modalProcessing() {
         debugger;
         this._route.params.subscribe(params => {
-            this.mode = this._commonService.setMode(this.InputMode, params['mode'])
+            //this.mode = this._commonService.setMode(this.InputMode, params['mode'])
             this.modal = this._commonService.setModal(this.InputModal, params['modal'])
         });
 
         if (this.modal === "true") {
-            this.modalClass = "modal"
+            this.modalClass = "modal fade"
             this.modalDisplay = 'block'
             this.allDisplay = 'block'
         } else {

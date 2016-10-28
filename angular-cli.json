@@ -18,7 +18,8 @@
       "scripts": [
         "../node_modules/chart.js/dist/Chart.bundle.min.js",
         "../node_modules/chart.js/dist/Chart.min.js",
-        "../node_modules/ng2-toastr/bundles/ng2-toastr.min.js"
+        "../node_modules/ng2-toastr/bundles/ng2-toastr.min.js",
+        "../node_modules/underscore/underscore.js"
       ],
       "environments": {
         "source": "environments/environment.ts",
@@ -26,7 +27,7 @@
         "prod": "environments/environment.prod.ts"
       }
     }
-  ],
+  ], 
   "addons": [],
   "packages": [],
   "e2e": {

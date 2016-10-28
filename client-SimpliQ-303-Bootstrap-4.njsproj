@@ -22,6 +22,7 @@
     <Content Include=".gitignore" />
     <Content Include="angular-cli.json" />
     <Content Include="package.json" />
+    <Content Include="src\app\d2dapp\assets\custom\stylesheets\override.css" />
     <Content Include="src\app\d2dapp\security\auth\logout.component.html" />
     <Content Include="src\app\d2dapp\security\auth\register.component.html" />
     <Content Include="src\app\d2dapp\security\auth\signin.component.html" />
@@ -730,12 +731,15 @@
     <Folder Include="src\app\charts" />
     <Folder Include="src\app\components" />
     <Folder Include="src\app\d2dapp\" />
+    <Folder Include="src\app\d2dapp\assets\custom\" />
+    <Folder Include="src\app\d2dapp\assets\custom\stylesheets\" />
     <Folder Include="src\app\d2dapp\master\" />
     <Folder Include="src\app\d2dapp\master\items\" />
     <Folder Include="src\app\d2dapp\master\languages\" />
     <Folder Include="src\app\d2dapp\master\lists\" />
     <Folder Include="src\app\d2dapp\master\profiles\" />
     <Folder Include="src\app\d2dapp\master\rulebooks\" />
+    <Folder Include="src\app\d2dapp\assets\" />
     <Folder Include="src\app\d2dapp\security\" />
     <Folder Include="src\app\d2dapp\security\auth\" />
     <Folder Include="src\app\d2dapp\security\tenants\" />

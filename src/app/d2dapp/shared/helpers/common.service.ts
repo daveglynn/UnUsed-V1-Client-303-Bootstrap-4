@@ -16,7 +16,7 @@ export class CommonService {
     }
 
     setParms(urlParms) {
-
+        debugger;
         let params: URLSearchParams = new URLSearchParams();
         params.set('Auth', localStorage.getItem('token'));
 
@@ -59,7 +59,7 @@ export class CommonService {
 
 
     setMode(componentMode: string, urlMode: string) {
-
+        debugger;
         var runMode = 'display';
 
        // if ((componentMode == 'workwith') || (componentMode == 'display') || (componentMode == 'select')) {
@@ -82,7 +82,7 @@ export class CommonService {
     }
 
     setModal(componentModal: string, urlModal: string) {
-
+        debugger;
         var runModal = 'false';
       //  if ((componentModal == 'true') || (componentModal == 'false')) {
       //      runModal = componentModal;
@@ -109,32 +109,20 @@ export class CommonService {
     }
 
     getAction(path:string) {
+        debugger;
 
-      //  if (path.includes("add")) {
-      //      return "add";
-      //  } else if (path.includes("edit")) {
-      //      return "edit";
-      //  } else if (path.includes("delete")) {
-      //      return "delete";
-      //  } else if (path.includes("view")) {
-      //      return "view";
-      //  } else  {
-      //      return "";
-      //  }
-
-        if (path.indexOf("add")) {
+        if (path.indexOf("add") > 0 ) {
             return "add";
-        } else if (path.indexOf("edit")) {
+        } else if (path.indexOf("edit") > 0 ) {
             return "edit";
-        } else if (path.indexOf("delete")) {
+        } else if (path.indexOf("delete") > 0 ) {
             return "delete";
-        } else if (path.indexOf("view")) {
+        } else if (path.indexOf("view") > 0 ) {
             return "view";
-       } else  {
+        } else  {
             return "";
-       }
+        }
         
     }
-    
 
 }
